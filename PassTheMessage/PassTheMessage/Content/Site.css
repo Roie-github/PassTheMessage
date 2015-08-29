@@ -1,13 +1,13 @@
-﻿body {
+﻿/*body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
+}*/
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
@@ -43,14 +43,14 @@ input[type="checkbox"].input-validation-error {
 
 /** my style **/
 #chatDiv {
- height:300px;
-  overflow-y:auto;
+    height: 300px;
+    overflow-y: auto;
 }
 
     #chatDiv i {
-     font-size:2em;
-    
+        font-size: 2em;
     }
+
 .msg {
-font-size:.75em;
+    font-size: .75em;
 }
