@@ -10,7 +10,7 @@
         <div class="panel-body">
             <div class="row">
                 <div id="chatDiv" class="col-lg-12" data-spy="scroll">
-                    
+
                 </div>
             </div>
         </div>
@@ -18,8 +18,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <textarea  id="message" class="form-control"></textarea>
-                        
+                        <textarea id="message" class="form-control"></textarea>
+
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -49,14 +49,14 @@
             var chat = $.connection.chatHub;
             // Create a function that the hub can call back to display messages.
             chat.client.addNewMessageToPage = function (name, message) {
-                
-                $myname= $('#displayname').val();
-                if($myname==name){
+
+                $myname = $('#displayname').val();
+                if ($myname == name) {
                     $('#chatDiv').append('<div class=\'alert alert-info\'><i class="fa fa-comment"></i>  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>' + htmlEncode(name)
                    + '</strong>: ' + htmlEncode(message) + '</div>');
                 }
-                else{
-                // Add the message to the page.
+                else {
+                    // Add the message to the page.
                     $('#chatDiv').append('<div class=\'alert alert-success\'><i class="fa fa-comments-o"></i>  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>' + htmlEncode(name)
                     + '</strong>: ' + htmlEncode(message) + '</div>');
                     newMessage();
@@ -82,13 +82,22 @@
             var encodedValue = $('<div />').text(value).html();
             return encodedValue;
         }
-        function newMessage()
-        {
+        function newMessage() {
+            var ua = navigator.userAgent,
+            browser = {
+                iPad: /iPad/.test(ua),
+                iPhone: /iPhone/.test(ua),
+                Android4: /Android 4/.test(ua)
+            };
+            alert(ua);
+            if (browser.Android4) {
+                alert('android');
+            }
             $('#newMsg').empty();
             $('#newMsg').append("<div class='alert'><a href='#' class='close msg' data-dismiss='alert' onclick='scrollDown();'><i class='fa fa-envelope-o'></i> New Message Received!</a></div>");
         }
         function scrollDown() {
-           
+
             $('#newMsg').empty();
             $('#chatDiv').animate({
                 scrollTop: $('#chatDiv').get(0).scrollHeight
