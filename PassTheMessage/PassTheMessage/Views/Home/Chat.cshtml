@@ -83,16 +83,7 @@
             return encodedValue;
         }
         function newMessage() {
-            var ua = navigator.userAgent,
-            browser = {
-                iPad: /iPad/.test(ua),
-                iPhone: /iPhone/.test(ua),
-                Android4: /Android 4/.test(ua)
-            };
-            alert(ua);
-            if (browser.Android4) {
-                alert('android');
-            }
+          
             $('#newMsg').empty();
             $('#newMsg').append("<div class='alert'><a href='#' class='close msg' data-dismiss='alert' onclick='scrollDown();'><i class='fa fa-envelope-o'></i> New Message Received!</a></div>");
         }
