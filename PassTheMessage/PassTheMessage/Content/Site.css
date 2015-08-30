@@ -71,3 +71,10 @@ input[type="checkbox"].input-validation-error {
 #sendmessage {
     width:100px;
 }
+#newMsg {
+    float:right;
+}
+
+#divUser {
+margin:15px 0 15px 0;
+}
