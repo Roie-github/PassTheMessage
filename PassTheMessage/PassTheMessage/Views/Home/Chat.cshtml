@@ -16,19 +16,20 @@
         </div>
         <div class="panel-footer">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <textarea id="message" class="form-control"></textarea>
 
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-sm-3">
                     <div class="form-group">
                         <input type="button" id="sendmessage" value="Send" class="btn btn-primary" />
                         <input type="hidden" id="displayname" />
-                        <div id="newMsg"></div>
                     </div>
+
                 </div>
+                <div class="col-sm-3"><div class="form-group"><div id="newMsg"></div></div></div>
             </div>
         </div>
     </div>
@@ -52,12 +53,12 @@
 
                 $myname = $('#displayname').val();
                 if ($myname == name) {
-                    $('#chatDiv').append('<div class=\'alert alert-info\'><i class="fa fa-comment"></i>  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>' + htmlEncode(name)
+                    $('#chatDiv').append('<div class=\'alert alert-info\'><i class="fa fa-comment"></i>  <a href="#" class="close close-sm" data-dismiss="alert" aria-label="close">&times;</a><strong>' + htmlEncode(name)
                    + '</strong>: ' + htmlEncode(message) + '</div>');
                 }
                 else {
                     // Add the message to the page.
-                    $('#chatDiv').append('<div class=\'alert alert-success\'><i class="fa fa-comments-o"></i>  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>' + htmlEncode(name)
+                    $('#chatDiv').append('<div class=\'alert alert-success\'><i class="fa fa-comments-o"></i>  <a href="#" class="close close-sm" data-dismiss="alert" aria-label="close">&times;</a><strong>' + htmlEncode(name)
                     + '</strong>: ' + htmlEncode(message) + '</div>');
                     newMessage();
                 }
@@ -83,7 +84,7 @@
             return encodedValue;
         }
         function newMessage() {
-          
+
             $('#newMsg').empty();
             $('#newMsg').append("<div class='alert'><a href='#' class='close msg' data-dismiss='alert' onclick='scrollDown();'><i class='fa fa-envelope-o'></i> New Message Received!</a></div>");
         }

@@ -46,12 +46,28 @@ input[type="checkbox"].input-validation-error {
 #chatDiv {
     height: 300px;
     overflow-y: auto;
+    font-size:10px;
 }
 
     #chatDiv i {
-        font-size: 2em;
+        font-size: 1em;
     }
+    
 
 .msg {
     font-size: .75em;
+}
+
+/* a link close*/
+.close-sm {
+    font-size:14px;
+}
+
+#message {
+    height:50px;
+    
+    font-size:10px;
+}
+#sendmessage {
+    width:100px;
 }
